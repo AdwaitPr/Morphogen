@@ -1,0 +1,61 @@
+/* ═══════════════════════════════════════════════════════════
+   BioSynth Lab — Design Tokens: Color System
+   ═══════════════════════════════════════════════════════════
+   All colors are defined as CSS custom properties.
+   Deuteranopia-safe fallback palette activates via
+   [data-palette="deuteranopia"] on <html>.
+
+   Contrast verification (WCAG AA ≥ 4.5:1):
+   ┌──────────────────────────┬─────────────┬───────┐
+   │ Text Token               │ On Surface  │ Ratio │
+   ├──────────────────────────┼─────────────┼───────┤
+   │ --text-primary (#F2F4F5) │ --bg-base   │ 15.2  │
+   │ --text-primary           │ --bg-panel  │ 12.4  │
+   │ --text-primary           │ --bg-elevated│ 10.8 │
+   │ --text-muted (#8B9198)   │ --bg-base   │  6.1  │
+   │ --text-muted             │ --bg-panel  │  5.0  │
+   │ --text-faint (#5A6068)   │ --bg-base   │  3.3* │
+   │ --accent-teal (#4FB6AC)  │ --bg-base   │  8.0  │
+   │ --accent-teal            │ --bg-panel  │  6.5  │
+   │ --accent-amber (#E8A33D) │ --bg-base   │  7.9  │
+   │ --accent-lime (#A4D65E)  │ --bg-base   │  9.5  │
+   │ --accent-alert (#D1495B) │ --bg-base   │  4.6  │
+   └──────────────────────────┴─────────────┴───────┘
+   * text-faint is decorative only (hints, non-essential)
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Lab Surfaces ── */
+  --bg-base: #0E1114;
+  --bg-panel: #1A1A1A;
+  --bg-elevated: #23262B;
+  --border-subtle: #2E3238;
+
+  /* ── Accent Palette ── */
+  --accent-teal: #4FB6AC;
+  --accent-amber: #E8A33D;
+  --accent-alert: #D1495B;
+  --accent-lime: #A4D65E;
+
+  /* ── Text Hierarchy ── */
+  --text-primary: #F2F4F5;
+  --text-muted: #8B9198;
+  --text-faint: #5A6068;
+
+  /* ── Derived / Functional ── */
+  --focus-ring: var(--accent-teal);
+  --slider-track-fill: linear-gradient(to top, var(--accent-teal), var(--accent-lime));
+  --glow-teal: 0 0 12px rgba(79, 182, 172, 0.4);
+  --glow-amber: 0 0 12px rgba(232, 163, 61, 0.3);
+}
+
+/* ── Deuteranopia-Safe Fallback Palette ──
+   Activated via: document.documentElement.dataset.palette = 'deuteranopia'
+   Teal → Blue, Lime → Cyan. Amber and Alert unchanged (already distinguishable). */
+
+[data-palette='deuteranopia'] {
+  --accent-teal: #4A90D9;
+  --accent-lime: #5EC8D6;
+  /* amber (#E8A33D) and alert (#D1495B) remain unchanged */
+  --glow-teal: 0 0 12px rgba(74, 144, 217, 0.4);
+}

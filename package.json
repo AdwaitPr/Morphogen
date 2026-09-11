@@ -1,0 +1,50 @@
+{
+  "name": "morphogen",
+  "version": "1.0.0",
+  "description": "Interactive 3D in-silico morphogenesis & parametric organism evolution engine",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/postprocessing": "^2.19.1",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "detect-gpu": "^5.0.70",
+    "gsap": "^3.15.0",
+    "immer": "^10.2.0",
+    "motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0",
+    "tone": "^15.1.22",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@axe-core/react": "^4.13.0",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.5.6",
+    "leva": "^0.10.1",
+    "oxlint": "^1.81.0",
+    "postcss": "^8.5.28",
+    "prettier": "^3.9.6",
+    "rollup-plugin-visualizer": "^7.1.1",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vite-plugin-glsl": "^1.6.1",
+    "vitest": "^5.0.0"
+  }
+}
